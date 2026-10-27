@@ -1,0 +1,30 @@
+# Dataset Configuration: ISIC 2019 Benchmark
+name: "isic2019"
+modality: "dermoscopy"
+image_size: [224, 224]
+
+paths:
+  raw_dir: "data/raw/isic2019"
+  images_dir: "data/raw/isic2019/images"
+  metadata_csv: "data/raw/isic2019/metadata.csv"
+  splits_dir: "data/processed/isic2019/splits"
+
+columns:
+  image_col: "image"
+  patient_col: "patient_id"
+  target_col: "label"
+  tone_col: "ita_bucket" # Derived post-hoc via colorimetry
+
+classes:
+  count: 8
+  names:
+    - "MEL" # Melanoma
+    - "NV"  # Melanocytic nevus
+    - "BCC" # Basal cell carcinoma
+    - "AK"  # Actinic keratosis
+    - "BKL" # Benign keratosis
+    - "DF"  # Dermatofibroma
+    - "VASC"# Vascular lesion
+    - "SCC" # Squamous cell carcinoma
+
+license: "CC-BY-NC 4.0 / ISIC Archive Terms"

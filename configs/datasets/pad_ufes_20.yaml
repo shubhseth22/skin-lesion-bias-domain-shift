@@ -1,0 +1,28 @@
+# Dataset Configuration: PAD-UFES-20 Benchmark
+name: "pad_ufes_20"
+modality: "smartphone_photography"
+image_size: [224, 224]
+
+paths:
+  raw_dir: "data/raw/pad_ufes_20"
+  images_dir: "data/raw/pad_ufes_20/images"
+  metadata_csv: "data/raw/pad_ufes_20/metadata.csv"
+  splits_dir: "data/processed/pad_ufes_20/splits"
+
+columns:
+  image_col: "img_id"
+  patient_col: "patient_id" # Biopsy confirmed, patient-linked
+  target_col: "diagnostic"
+  tone_col: "fitzpatrick" # 1 to 6
+
+classes:
+  count: 6
+  names:
+    - "BCC" # Basal Cell Carcinoma
+    - "SCC" # Squamous Cell Carcinoma
+    - "MEL" # Melanoma
+    - "ACK" # Actinic Keratosis
+    - "NEV" # Nevus
+    - "SEK" # Seborrheic Keratosis
+
+license: "CC BY 4.0 / Pacheco et al., Data in Brief 2020"

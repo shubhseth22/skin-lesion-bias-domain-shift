@@ -1,0 +1,28 @@
+# Experiment Configuration: Group Distributionally Robust Optimization (Group-DRO)
+experiment_id: "EXP-FAIRNESS-GROUP-DRO"
+description: "Minimizes worst-group empirical risk across skin-tone subgroups to equalize diagnostic accuracy."
+
+model:
+  backbone: "resnet50"
+  pretrained: true
+  num_classes: 2
+
+optimization:
+  loss: "group_dro"
+  group_step_size: 0.01
+  group_weights_step_size: 0.01
+  optimizer: "adamw"
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-4
+  batch_size: 32
+  epochs: 50
+
+mitigation:
+  method: "group_dro"
+  group_col: "fitzpatrick_tone"
+
+evaluation:
+  subgroup_audit: true
+  compute_equalized_odds: true
+  compute_demographic_parity: true
+  pareto_frontier_logging: true

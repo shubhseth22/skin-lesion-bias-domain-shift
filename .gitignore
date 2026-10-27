@@ -1,0 +1,119 @@
+# ==============================================================================
+# Byte-compiled / optimized / DLL files
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ==============================================================================
+# Virtual Environments & Packaging
+# ==============================================================================
+.env
+.env.*
+!.env.example
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==============================================================================
+# Secrets, Keys, and API Credentials (NEVER COMMIT SECRETS)
+# ==============================================================================
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+credentials.json
+client_secret*.json
+token.json
+secrets/
+.secrets/
+
+# ==============================================================================
+# Data and Medical Datasets (NEVER COMMIT MEDICAL IMAGERY OR METADATA)
+# ==============================================================================
+data/
+raw_data/
+processed_data/
+*.csv.gz
+*.tar.gz
+*.tar
+*.zip
+*.7z
+*.h5
+*.hdf5
+*.parquet
+*.feather
+
+# ==============================================================================
+# Model Weights, Checkpoints, and Artifacts (UNIVERSAL EXCLUSION)
+# ==============================================================================
+checkpoints/
+weights/
+*.pt
+*.pth
+*.onnx
+*.bin
+*.ckpt
+*.safetensors
+*.joblib
+artifacts/
+runs/
+wandb/
+experiments/**/runs/
+experiments/**/checkpoints/
+experiments/**/logs/
+experiments/**/weights/
+
+# ==============================================================================
+# Logs and Profiling
+# ==============================================================================
+*.log
+logs/
+tensorboard/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==============================================================================
+# Node & Frontend
+# ==============================================================================
+frontend/node_modules/
+frontend/dist/
+frontend/.next/
+frontend/build/
+.npm
+*.tsbuildinfo
+
+# ==============================================================================
+# OS and IDE files
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

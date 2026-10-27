@@ -1,0 +1,24 @@
+# Experiment Configuration: Baseline Empirical Risk Minimization (ERM)
+experiment_id: "EXP-BASELINE-ERM"
+description: "Reference baseline trained under standard cross-entropy loss without subgroup or domain mitigation."
+
+model:
+  backbone: "resnet50" # Options: resnet50, efficientnet_b4, vit_base_patch16_224
+  pretrained: true
+  num_classes: 2
+
+optimization:
+  loss: "cross_entropy"
+  optimizer: "adamw"
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-4
+  batch_size: 32
+  epochs: 50
+
+mitigation:
+  method: "none"
+
+evaluation:
+  subgroup_audit: true
+  compute_calibration_ece: true
+  generate_reliability_diagram: true

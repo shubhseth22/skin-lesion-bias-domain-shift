@@ -1,0 +1,28 @@
+# Experiment Configuration: Domain Adversarial Neural Network (DANN)
+experiment_id: "EXP-DA-DANN"
+description: "Adversarial feature alignment using gradient reversal to mitigate dermoscopy -> clinical photography domain shift."
+
+model:
+  backbone: "resnet50"
+  pretrained: true
+  num_classes: 2
+  domain_classifier_hidden_dim: 512
+
+optimization:
+  task_loss: "cross_entropy"
+  domain_loss: "binary_cross_entropy"
+  dann_lambda: 1.0 # Gradient reversal scaling factor
+  optimizer: "adamw"
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-4
+  batch_size: 32
+  epochs: 50
+
+domains:
+  source: "isic2019"
+  target: "fitzpatrick17k"
+
+evaluation:
+  subgroup_audit: true
+  cross_domain_matrix: true
+  ood_transfer_gap: true

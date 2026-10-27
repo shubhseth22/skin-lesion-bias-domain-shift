@@ -1,0 +1,25 @@
+# Dataset Configuration: Fitzpatrick 17k Benchmark
+name: "fitzpatrick17k"
+modality: "clinical_photography"
+image_size: [224, 224]
+
+paths:
+  raw_dir: "data/raw/fitzpatrick17k"
+  images_dir: "data/raw/fitzpatrick17k/images"
+  metadata_csv: "data/raw/fitzpatrick17k/fitzpatrick17k.csv"
+  splits_dir: "data/processed/fitzpatrick17k/splits"
+
+columns:
+  image_col: "md5hash"
+  patient_col: null # Fitzpatrick 17k does not provide patient IDs
+  target_col: "nine_partition_label" # or 'three_partition_label', 'label' (114 conditions)
+  tone_col: "fitzpatrick_scale" # Categorical (1 to 6)
+
+subgroups:
+  scale: "fitzpatrick"
+  types: [1, 2, 3, 4, 5, 6]
+  binary_grouping:
+    light: [1, 2, 3]
+    dark: [4, 5, 6]
+
+license: "CC BY-NC 4.0 / Academic Use Only"
